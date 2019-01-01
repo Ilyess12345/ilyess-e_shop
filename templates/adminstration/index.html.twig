@@ -1,0 +1,28 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Adminstration{% endblock %}
+
+{% block body %}
+
+
+
+
+		<h1 class="text-center">Tableau de bord</h1>
+
+		<ul class="list-group">
+			<li class="list-group-item">
+				Nombre des Catégoies
+				<span class="badge">{{ nbC }}</span>
+			</li>
+			<li class="list-group-item">
+				Nombre des Produits
+				<span class="badge">{{ nbP }}</span>				
+			</li>
+			<li class="list-group-item">
+				Nombre des Commandes
+				<span class="badge">{{nbCommande  }}</span>
+			</li>
+
+		</ul>
+	</div>
+{% endblock %}

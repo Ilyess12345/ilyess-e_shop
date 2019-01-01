@@ -1,0 +1,35 @@
+{% extends 'base-admin.html.twig' %}
+
+
+{% block title %}New Categorie{% endblock %}
+
+{% block body %}
+
+<table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.id }}</a></td>
+                <td>{{ commande.nom }}</td>
+                <td>{{ commande.prenom }}</td>
+                <td>{{ commande.email }}</td>
+                <td>{{ commande.adresse }}</td>
+                <td>{% if commande.date %}{{ commande.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

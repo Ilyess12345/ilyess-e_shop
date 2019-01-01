@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="row">	  
+			<div class="tab-pane  active" id="blockView">
+		<ul class="thumbnails">
+			{% for prd in produits %}
+			<li class="span3">
+			  <div class="thumbnail">
+				<a href="product_details.html"><img src="{{ prd.imageP }}" alt=""/></a>
+				<div class="caption">
+				  <h5>{{ prd.libelle }}</h5>
+				  <p> 
+					{{ prd.descCourt }}
+				  </p>
+				    <h4 style="text-align:center"><a class="btn btn-primary" href="{{ path('show_produit', { 'id' : prd.id }) }}">Details</a> <a class="btn btn-success" href="#">{{ prd.prix }} DT</a></h4>
+				</div>
+			  </div>
+			</li>
+            {% endfor %}
+
+
+		  </ul>
+	<hr class="soft"/>
+	</div>
+</div>
+
+        </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="row">	  
+			<div class="tab-pane  active" id="blockView">
+		<ul class="thumbnails">
+			{% for cat in categories %}
+			<li class="span3">
+			  <div class="thumbnail">
+				<a href="product_details.html"><img src="{{ cat.image }}" alt=""/></a>
+				<div class="caption">
+				  <h5>{{ cat.libelle }}</h5>
+				  <p> 
+					{{ cat.description }}
+				  </p>
+				    <h4 style="text-align:center"><a class="btn btn-success" href="{{ path('show_produits',{'id' : cat.id }) }}">View</a></h4>
+				</div>
+			  </div>
+			</li>
+            {% endfor %}
+
+
+		  </ul>
+	<hr class="soft"/>
+	</div>
+</div>
+
+        </div>
+
+{% endblock %}
